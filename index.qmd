@@ -9,13 +9,10 @@ about:
   links:
     - icon: linkedin
       text: LinkedIn
-      href: https://linkedin.com
-    - icon: instagram
-      text: Instagram
-      href: https://instagram.com
+      href: https://www.linkedin.com/in/dylan-emler-9632ab175/
     - icon: github
       text: GitHub
-      href: https://github.com
+      href: https://github.com/demler4/demler4.github.io
     - icon: file-earmark-pdf
       text: Resumé
       href: https://GITHUB_USERNAME.github.io/resume-example.pdf
