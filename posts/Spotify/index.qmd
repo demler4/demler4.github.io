@@ -1,0 +1,72 @@
+---
+title: "Spotify"
+author: "Dylan Emler"
+date: "2023-10-27"
+categories: [news]
+---
+
+Welcome! In this section we go over the top ranked songs on spofity. 
+
+![](Spotify.png)
+
+
+```{r}
+library(tidyverse)
+spotify_all <- read.csv("/Users/dylanemler/Documents/Files/spotify_all.csv")
+Q1c <- spotify_all %>% 
+  group_by(artist_name) %>% 
+  mutate(n_popular_artist = n()) %>% 
+  ungroup() %>% 
+  mutate( artist_ranking = dense_rank( desc(n_popular_artist) ) ) %>% 
+  filter( artist_ranking <= 10) 
+  
+# boxplot
+ggplot(Q1c,
+       aes(x = pos, y = fct_reorder(artist_name, -artist_ranking)) ) +
+  geom_boxplot() +
+  stat_summary(
+    fun = mean,
+    color = 'red'
+  )
+```
+
+Based on what we can see in the box plot, the graph is skewed right. This means that most of the time the Song users play the artist songs earlier in their playlists. 
+
+```{r}
+library(tidyselect)
+
+top_artists <- spotify_all %>%
+  group_by(artist_name) %>%
+  summarize(total_duration = sum(duration_ms)) %>%
+  arrange(desc(total_duration)) %>%
+  head(10)
+
+ggplot(top_artists, aes(x = reorder(artist_name, -total_duration), y = total_duration)) +
+  geom_bar(stat = "identity", fill = "skyblue") +
+  labs(title = "Top 10 Artists by Total Duration",
+       x = "Artist Name",
+       y = "Total Duration (ms)") +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+
+
+```
+The graph shows the the top 10 artist by total duration, in milliseconds, of songs made by the artist. 
+
+```{r}
+top_songs <- spotify_all %>%
+  group_by(track_name) %>%
+  summarize(total_duration = sum(duration_ms)) %>%
+  arrange(desc(total_duration)) %>%
+  head(10)
+
+ggplot(top_songs, aes(x = reorder(track_name, -total_duration), y = total_duration)) +
+  geom_bar(stat = "identity", fill = "lightgreen") +
+  labs(title = "Top 10 Songs by Total Duration",
+       x = "Track Name",
+       y = "Total Duration (ms)") +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+```
+This graph shows the top 10 aritsts based on who has the longest song. 
+
+
+

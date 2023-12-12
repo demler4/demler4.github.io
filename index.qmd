@@ -1,8 +1,8 @@
 ---
-title: "Dylan Emler"
+title: Dylan Emler
 about:
   template: trestles  # jolla  trestles  solana  marquee  broadside
-  image: img/profile.png
+  image: img/IMG_2212.jpeg
   image-width: 15em
   image-shape: round # rectangle  round  rounded
   
@@ -15,24 +15,24 @@ about:
       href: https://github.com/demler4/demler4.github.io
     - icon: file-earmark-pdf
       text: Resumé
-      href: https://GITHUB_USERNAME.github.io/resume-example.pdf
+      href: https://github.com/demler4/demler4.github.io/blob/main/DYL.RESUME.PDF
     - icon: mailbox
       text: Email
-      href: mailto:YOUR_EMAIL@geneseo.edu
+      href: dke2@geneseo.edu
 
 ---
 
 
-Finley Malloc majors in Data Analytics at SUNY Geneseo. When not working on data analytics, Finley enjoys spending time unicycling and playing with her pet iguana.
+Hi, my name is Dylan Emler and i am an accounting student at SUNY Geneseo. I started my college jounrey at Monroe community College and transferred into Geneseo in the fall of 2023. Before i decided i wanted to become an accountant, i owned and operated a lawn care business as well as worked in HVAC and Masonry. Since then i have completed an auditing internship For a top 50 accounting firm and am activley purusing my accounting degree. 
 
 ## Education
 
-State University of New York at Geneseo | Geneseo, NY <br>
-B.S. in Data Analytics | Aug 2022 - May 2026 <br>
-Minor in Business Administration 
+Monroe Community College - Fall 2021 to spring 2023
+Business Administration 
 
-## Experience
+SUNY Geneseo - Fall 2023 to Present
+Accounting
 
-Starbucks Analytics | Data Analyst Intern | May 2024 - Aug 2024
+
 
 

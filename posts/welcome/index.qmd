@@ -1,12 +1,12 @@
 ---
-title: "Welcome To My Blog"
-author: "YOUR NAME"
+title: "Welcome to my Blog"
+author: "Dylan Emler"
 date: "2023-10-27"
 categories: [news]
 ---
 
-This is the first post in a Quarto blog. Welcome!
+Welcome! In the best blog ever, we only talk about the best things.
 
-![](thumbnail.jpg)
+![](Welcome_PIC.jpeg)
 
-Since this post doesn't specify an explicit `image`, the first image in the post will be used in the listing page of posts.
+

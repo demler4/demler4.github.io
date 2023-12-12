@@ -1,0 +1,16 @@
+{
+  "hash": "97f33a668bae8ff9f4baedb36ff5a549",
+  "result": {
+    "markdown": "---\ntitle: \"Beer Markets\"\nauthor: \"Dylan Emler\"\ndate: \"2023-10-27\"\ncategories: [news]\n---\n\n\nIn this section of the website, we cover Beer!\n\n![](Beer_PIC.jpeg)\n\n\n\n::: {.cell}\n\n```{.r .cell-code}\nlibrary(ggplot2)\n\nbeer_mkts <- read.csv('https://bcdanl.github.io/data/beer_markets.csv')\n\nggplot(beer_mkts, aes(x = dollar_spent)) +\n  geom_histogram(binwidth = 5, fill = \"#66c2a5\", color = \"black\") +\n  labs(title = \"Histogram of Dollar Spent on Beer\",\n       x = \"Dollar Spent\",\n       y = \"Frequency\") +\n  theme_minimal()\n```\n\n::: {.cell-output-display}\n![](index_files/figure-html/unnamed-chunk-1-1.png){width=672}\n:::\n:::\n\nThis graph shows the relationship between the amount households spend on alchol and how many spend that amount. \n\n\n::: {.cell}\n\n```{.r .cell-code}\nggplot(beer_mkts, aes(x = brand, y = price_per_floz, fill = brand)) +\n  geom_boxplot() +\n  labs(title = \"Boxplot of Price per fl.oz. by Beer Brand\",\n       x = \"Brand\",\n       y = \"Price per fl.oz.\") +\n  theme_minimal() +\n  theme(axis.text.x = element_text(angle = 45, hjust = 1, vjust = 1))\n```\n\n::: {.cell-output-display}\n![](index_files/figure-html/unnamed-chunk-2-1.png){width=672}\n:::\n:::\n\nThis graph shows the average price per fluid ounce as well as the range based on brand. The data is shown by a box plot. \n\n\n::: {.cell}\n\n```{.r .cell-code}\nggplot(beer_mkts, aes(x = beer_floz, y = dollar_spent, color = brand)) +\n  geom_point(alpha = 0.7) +\n  labs(title = \"Scatter Plot of Beer Volume vs. Dollar Spent by Brand\",\n       x = \"Beer Volume (fl.oz.)\",\n       y = \"Dollar Spent\") +\n  theme_minimal()\n```\n\n::: {.cell-output-display}\n![](index_files/figure-html/unnamed-chunk-3-1.png){width=672}\n:::\n:::\n\n\nThis graph shows the relationship between the volume of beer purchased and the price spent. \n\n",
+    "supporting": [
+      "index_files"
+    ],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

@@ -6,7 +6,7 @@ author:
   - Ryan Horn
   - Ethan Hagan
   - Kara Nash
-  - Rachel
+  - Rachel Rabkin
 
 toc: true
 toc-title: "Table of Contents"
