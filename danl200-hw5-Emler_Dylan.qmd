@@ -1,0 +1,7 @@
+---
+title: "danl200-hw5-Emler_Dylan.qmd"
+format: html
+editor: visual
+---
+
+## Q1a

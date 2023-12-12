@@ -21,32 +21,46 @@
     "text": "2.2 MPG and a Type of Cars\nThe following boxplot shows how the distribution of highway MPG (hwy) varies by a type of cars (class) 🚙 🚚 🚐.\n\nggplot(data = mpg) +\n  geom_boxplot(aes(x = class, y = hwy, fill = class),\n               show.legend = F) +\n  labs(x = \"Class\", y = \"Highway\\nMPG\")"
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Dylan Emler",
+    "objectID": "blog-listing.html",
+    "href": "blog-listing.html",
+    "title": "Dylans Blog",
     "section": "",
-    "text": "Hi, my name is Dylan Emler and i am an accounting student at SUNY Geneseo. I started my college jounrey at Monroe community College and transferred into Geneseo in the fall of 2023. Before i decided i wanted to become an accountant, i owned and operated a lawn care business as well as worked in HVAC and Masonry. Since then i have completed an auditing internship For a top 50 accounting firm and am activley purusing my accounting degree."
+    "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Author\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n  \n\n\n\n\nWelcome to my Blog\n\n\n\n\n\n\n\n\n\nOct 27, 2023\n\n\nDylan Emler\n\n\n1 min\n\n\n\n\n\n\n  \n\n\n\n\nSpotify\n\n\n\n\n\n\n\n\n\nOct 27, 2023\n\n\nDylan Emler\n\n\n2 min\n\n\n\n\n\n\n  \n\n\n\n\nRestaurant Inspection\n\n\n\n\n\n\n\n\n\nOct 27, 2023\n\n\nDylan Emler\n\n\n2 min\n\n\n\n\n\n\n  \n\n\n\n\nNFL Data\n\n\n\n\n\n\n\n\n\nOct 27, 2023\n\n\nDylan Emler\n\n\n3 min\n\n\n\n\n\n\n  \n\n\n\n\nBeer Markets\n\n\n\n\n\n\n\n\n\nOct 27, 2023\n\n\nDylan Emler\n\n\n2 min\n\n\n\n\n\n\nNo matching items"
   },
   {
-    "objectID": "index.html#education",
-    "href": "index.html#education",
-    "title": "Dylan Emler",
-    "section": "Education",
-    "text": "Education\nMonroe Community College - Fall 2021 to spring 2023 Business Administration\nSUNY Geneseo - Fall 2023 to Present Accounting"
+    "objectID": "danl200-hw5-Emler_Dylane.qmd/danl200-hw5-Emler_Dylane.qmd.html",
+    "href": "danl200-hw5-Emler_Dylane.qmd/danl200-hw5-Emler_Dylane.qmd.html",
+    "title": "danl200-hw5-Emler_Dylane.qmd",
+    "section": "",
+    "text": "Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see https://quarto.org"
   },
   {
-    "objectID": "posts/Inspection/index.html",
-    "href": "posts/Inspection/index.html",
-    "title": "Restaurant Inspection",
+    "objectID": "danl200-hw5-Emler_Dylane.qmd/danl200-hw5-Emler_Dylane.qmd.html#quarto",
+    "href": "danl200-hw5-Emler_Dylane.qmd/danl200-hw5-Emler_Dylane.qmd.html#quarto",
+    "title": "danl200-hw5-Emler_Dylane.qmd",
     "section": "",
-    "text": "Welcome! Here we go over Restaurants and their different rankings\n\n\nlibrary(tidyverse)\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.2     ✔ readr     2.1.4\n✔ forcats   1.0.0     ✔ stringr   1.5.0\n✔ ggplot2   3.4.3     ✔ tibble    3.2.1\n✔ lubridate 1.9.2     ✔ tidyr     1.3.0\n✔ purrr     1.0.2     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\nlibrary(skimr)\nlibrary(ggplot2)\nrestaurants_data &lt;- read.csv(\"/Users/dylanemler/Documents/Files/DOHMH_NYC_Restaurant_Inspection.csv\")\n\nggplot(restaurants_data, aes(x = factor(BORO))) +\n  geom_bar(fill = \"#66c2a5\", color = \"black\") +\n  labs(title = \"Distribution of Restaurants Across Boroughs\",\n       x = \"Borough\",\n       y = \"Count\") +\n  theme_minimal() +\n  theme(axis.text.x = element_text(angle = 45, hjust = 1, vjust = 1))\n\n\n\n\nThis bar chart shows the how many restaurants are in all the different boroughs.\n\nlibrary(tidyverse)\nlibrary(skimr)\nlibrary(ggplot2)\nrestaurants_data &lt;- read.csv(\"/Users/dylanemler/Documents/Files/DOHMH_NYC_Restaurant_Inspection.csv\")\n\nggplot(restaurants_data, aes(x = factor(`VIOLATION.CODE`))) +\n  geom_bar(fill = \"#66c2a5\", color = \"black\", width = 0.7) +\n  labs(title = \"Distribution of Violation Codes\",\n       x = \"Violation Code\",\n       y = \"Count\") +\n  theme_minimal() +\n  theme(axis.text.x = element_text(angle = 45, hjust = 1, vjust = 1, size = 8),\n        axis.title.x = element_blank(),\n        panel.grid.major = element_blank(),\n        panel.grid.minor = element_blank(),\n        legend.position = \"none\") +\n  scale_x_discrete(labels = function(x) ifelse(seq_along(x) %% 5 == 0, x, \"\"))\n\n\n\n\nThis graph shows the the type of violation codes and how many restaraunts got that grade when they were inspected.\n\nlibrary(tidyverse)\nlibrary(skimr)\nlibrary(ggplot2)\nrestaurants_data &lt;- read.csv(\"/Users/dylanemler/Documents/Files/DOHMH_NYC_Restaurant_Inspection.csv\")\n\n\nggplot(restaurants_data, aes(x = factor(BORO), y = SCORE, fill = factor(BORO))) +\n  geom_boxplot() +\n  labs(title = \"Distribution of Inspection Scores by Borough\",\n       x = \"Borough\",\n       y = \"Inspection Score\") +\n  theme_minimal()\n\n\n\n\nThis graph shows the distribution of inspection scores by each borough. Mannhattan and Queens had the highest rated restauraunts."
+    "text": "Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see https://quarto.org"
   },
   {
-    "objectID": "posts/Beer Markets/index.html",
-    "href": "posts/Beer Markets/index.html",
-    "title": "Beer Markets",
+    "objectID": "danl200-hw5-Emler_Dylane.qmd/danl200-hw5-Emler_Dylane.qmd.html#repository",
+    "href": "danl200-hw5-Emler_Dylane.qmd/danl200-hw5-Emler_Dylane.qmd.html#repository",
+    "title": "danl200-hw5-Emler_Dylane.qmd",
+    "section": "Repository",
+    "text": "Repository\nhttps://github.com/demler4/demler4.github.io"
+  },
+  {
+    "objectID": "danl200-hw5-Emler_Dylane.qmd/danl200-hw5-Emler_Dylane.qmd.html#git-hub-website",
+    "href": "danl200-hw5-Emler_Dylane.qmd/danl200-hw5-Emler_Dylane.qmd.html#git-hub-website",
+    "title": "danl200-hw5-Emler_Dylane.qmd",
+    "section": "Git hub website",
+    "text": "Git hub website"
+  },
+  {
+    "objectID": "posts/welcome/index.html",
+    "href": "posts/welcome/index.html",
+    "title": "Welcome to my Blog",
     "section": "",
-    "text": "In this section of the website, we cover Beer!\n\n\nlibrary(ggplot2)\n\nbeer_mkts &lt;- read.csv('https://bcdanl.github.io/data/beer_markets.csv')\n\nggplot(beer_mkts, aes(x = dollar_spent)) +\n  geom_histogram(binwidth = 5, fill = \"#66c2a5\", color = \"black\") +\n  labs(title = \"Histogram of Dollar Spent on Beer\",\n       x = \"Dollar Spent\",\n       y = \"Frequency\") +\n  theme_minimal()\n\n\n\n\nThis graph shows the relationship between the amount households spend on alchol and how many spend that amount.\n\nggplot(beer_mkts, aes(x = brand, y = price_per_floz, fill = brand)) +\n  geom_boxplot() +\n  labs(title = \"Boxplot of Price per fl.oz. by Beer Brand\",\n       x = \"Brand\",\n       y = \"Price per fl.oz.\") +\n  theme_minimal() +\n  theme(axis.text.x = element_text(angle = 45, hjust = 1, vjust = 1))\n\n\n\n\nThis graph shows the average price per fluid ounce as well as the range based on brand. The data is shown by a box plot.\n\nggplot(beer_mkts, aes(x = beer_floz, y = dollar_spent, color = brand)) +\n  geom_point(alpha = 0.7) +\n  labs(title = \"Scatter Plot of Beer Volume vs. Dollar Spent by Brand\",\n       x = \"Beer Volume (fl.oz.)\",\n       y = \"Dollar Spent\") +\n  theme_minimal()\n\n\n\n\nThis graph shows the relationship between the volume of beer purchased and the price spent."
+    "text": "Welcome! In the best blog ever, we only talk about the best things."
   },
   {
     "objectID": "posts/Spotify/index.html",
@@ -105,17 +119,31 @@
     "text": "Q2g.\nSummarize the resulting data.frame in Q2d, with the following four variables:\nposteam: String abbreviation for the team with possession. passer: Name of the player who passed a ball to a receiver by initially taking a three-step drop, and backpedaling into the pocket to make a pass. (Mostly, they are quarterbacks.) mean_epa: Mean value of epa in 2022 for each passer n_pass: Number of observations for each passer Then find the top 10 NFL passers in 2022 in terms of the mean value of epa, conditioning that n_pass must be greater than or equal to the third quantile level of n_pass.\n\nQ2g &lt;- NFL2022_stuffs_EPA %&gt;%\n  group_by(posteam, passer) %&gt;%\n  summarise(mean_epa = mean(epa), n_pass = n(), .groups = \"drop\") %&gt;%\n  filter(n_pass &gt;= quantile(n_pass, 0.75)) %&gt;%\n  top_n(10, mean_epa)\nprint(Q2g)\n\n# A tibble: 10 × 4\n   posteam passer       mean_epa n_pass\n   &lt;chr&gt;   &lt;chr&gt;           &lt;dbl&gt;  &lt;int&gt;\n 1 BUF     J.Allen        0.172     785\n 2 CIN     J.Burrow       0.153     854\n 3 CLE     J.Brissett     0.0912    445\n 4 DAL     D.Prescott     0.147     529\n 5 DET     J.Goff         0.171     661\n 6 JAX     T.Lawrence     0.128     764\n 7 KC      P.Mahomes      0.286     880\n 8 MIA     T.Tagovailoa   0.234     453\n 9 PHI     J.Hurts        0.138     672\n10 SF      J.Garoppolo    0.200     348"
   },
   {
-    "objectID": "posts/welcome/index.html",
-    "href": "posts/welcome/index.html",
-    "title": "Welcome to my Blog",
+    "objectID": "posts/Beer Markets/index.html",
+    "href": "posts/Beer Markets/index.html",
+    "title": "Beer Markets",
     "section": "",
-    "text": "Welcome! In the best blog ever, we only talk about the best things."
+    "text": "In this section of the website, we cover Beer!\n\n\nlibrary(ggplot2)\n\nbeer_mkts &lt;- read.csv('https://bcdanl.github.io/data/beer_markets.csv')\n\nggplot(beer_mkts, aes(x = dollar_spent)) +\n  geom_histogram(binwidth = 5, fill = \"#66c2a5\", color = \"black\") +\n  labs(title = \"Histogram of Dollar Spent on Beer\",\n       x = \"Dollar Spent\",\n       y = \"Frequency\") +\n  theme_minimal()\n\n\n\n\nThis graph shows the relationship between the amount households spend on alchol and how many spend that amount.\n\nggplot(beer_mkts, aes(x = brand, y = price_per_floz, fill = brand)) +\n  geom_boxplot() +\n  labs(title = \"Boxplot of Price per fl.oz. by Beer Brand\",\n       x = \"Brand\",\n       y = \"Price per fl.oz.\") +\n  theme_minimal() +\n  theme(axis.text.x = element_text(angle = 45, hjust = 1, vjust = 1))\n\n\n\n\nThis graph shows the average price per fluid ounce as well as the range based on brand. The data is shown by a box plot.\n\nggplot(beer_mkts, aes(x = beer_floz, y = dollar_spent, color = brand)) +\n  geom_point(alpha = 0.7) +\n  labs(title = \"Scatter Plot of Beer Volume vs. Dollar Spent by Brand\",\n       x = \"Beer Volume (fl.oz.)\",\n       y = \"Dollar Spent\") +\n  theme_minimal()\n\n\n\n\nThis graph shows the relationship between the volume of beer purchased and the price spent."
   },
   {
-    "objectID": "blog-listing.html",
-    "href": "blog-listing.html",
-    "title": "Dylans Blog",
+    "objectID": "posts/Inspection/index.html",
+    "href": "posts/Inspection/index.html",
+    "title": "Restaurant Inspection",
     "section": "",
-    "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Author\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n  \n\n\n\n\nWelcome to my Blog\n\n\n\n\n\n\n\n\n\nOct 27, 2023\n\n\nDylan Emler\n\n\n1 min\n\n\n\n\n\n\n  \n\n\n\n\nSpotify\n\n\n\n\n\n\n\n\n\nOct 27, 2023\n\n\nDylan Emler\n\n\n2 min\n\n\n\n\n\n\n  \n\n\n\n\nRestaurant Inspection\n\n\n\n\n\n\n\n\n\nOct 27, 2023\n\n\nDylan Emler\n\n\n2 min\n\n\n\n\n\n\n  \n\n\n\n\nRestaurant Inspection\n\n\n\n\n\n\n\n\n\nOct 27, 2023\n\n\nDylan Emler\n\n\n2 min\n\n\n\n\n\n\n  \n\n\n\n\nNFL Data\n\n\n\n\n\n\n\n\n\nOct 27, 2023\n\n\nDylan Emler\n\n\n3 min\n\n\n\n\n\n\n  \n\n\n\n\nBeer Markets\n\n\n\n\n\n\n\n\n\nOct 27, 2023\n\n\nDylan Emler\n\n\n2 min\n\n\n\n\n\n\n  \n\n\n\n\nBeer Markets\n\n\n\n\n\n\n\n\n\nOct 27, 2023\n\n\nDylan Emler\n\n\n2 min\n\n\n\n\n\n\nNo matching items"
+    "text": "Welcome! Here we go over Restaurants and their different rankings\n\n\nlibrary(tidyverse)\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.2     ✔ readr     2.1.4\n✔ forcats   1.0.0     ✔ stringr   1.5.0\n✔ ggplot2   3.4.3     ✔ tibble    3.2.1\n✔ lubridate 1.9.2     ✔ tidyr     1.3.0\n✔ purrr     1.0.2     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\nlibrary(skimr)\nlibrary(ggplot2)\nrestaurants_data &lt;- read.csv(\"/Users/dylanemler/Documents/Files/DOHMH_NYC_Restaurant_Inspection.csv\")\n\nggplot(restaurants_data, aes(x = factor(BORO))) +\n  geom_bar(fill = \"#66c2a5\", color = \"black\") +\n  labs(title = \"Distribution of Restaurants Across Boroughs\",\n       x = \"Borough\",\n       y = \"Count\") +\n  theme_minimal() +\n  theme(axis.text.x = element_text(angle = 45, hjust = 1, vjust = 1))\n\n\n\n\nThis bar chart shows the how many restaurants are in all the different boroughs.\n\nlibrary(tidyverse)\nlibrary(skimr)\nlibrary(ggplot2)\nrestaurants_data &lt;- read.csv(\"/Users/dylanemler/Documents/Files/DOHMH_NYC_Restaurant_Inspection.csv\")\n\nggplot(restaurants_data, aes(x = factor(`VIOLATION.CODE`))) +\n  geom_bar(fill = \"#66c2a5\", color = \"black\", width = 0.7) +\n  labs(title = \"Distribution of Violation Codes\",\n       x = \"Violation Code\",\n       y = \"Count\") +\n  theme_minimal() +\n  theme(axis.text.x = element_text(angle = 45, hjust = 1, vjust = 1, size = 8),\n        axis.title.x = element_blank(),\n        panel.grid.major = element_blank(),\n        panel.grid.minor = element_blank(),\n        legend.position = \"none\") +\n  scale_x_discrete(labels = function(x) ifelse(seq_along(x) %% 5 == 0, x, \"\"))\n\n\n\n\nThis graph shows the the type of violation codes and how many restaraunts got that grade when they were inspected.\n\nlibrary(tidyverse)\nlibrary(skimr)\nlibrary(ggplot2)\nrestaurants_data &lt;- read.csv(\"/Users/dylanemler/Documents/Files/DOHMH_NYC_Restaurant_Inspection.csv\")\n\n\nggplot(restaurants_data, aes(x = factor(BORO), y = SCORE, fill = factor(BORO))) +\n  geom_boxplot() +\n  labs(title = \"Distribution of Inspection Scores by Borough\",\n       x = \"Borough\",\n       y = \"Inspection Score\") +\n  theme_minimal()\n\n\n\n\nThis graph shows the distribution of inspection scores by each borough. Mannhattan and Queens had the highest rated restauraunts."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Dylan Emler",
+    "section": "",
+    "text": "Hi, my name is Dylan Emler and i am an accounting student at SUNY Geneseo. I started my college jounrey at Monroe community College and transferred into Geneseo in the fall of 2023. Before i decided i wanted to become an accountant, i owned and operated a lawn care business as well as worked in HVAC and Masonry. Since then i have completed an auditing internship For a top 50 accounting firm and am activley purusing my accounting degree."
+  },
+  {
+    "objectID": "index.html#education",
+    "href": "index.html#education",
+    "title": "Dylan Emler",
+    "section": "Education",
+    "text": "Education\nMonroe Community College - Fall 2021 to spring 2023 Business Administration\nSUNY Geneseo - Fall 2023 to Present Accounting"
   }
 ]
